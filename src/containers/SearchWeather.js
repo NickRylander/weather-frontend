@@ -1,13 +1,13 @@
 // Form for searching weather
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 class SearchWeather extends Component {
     constructor() {
         super();
         this.state = {
-            city: ''
+            name: ''
         }
     }
 
@@ -18,7 +18,7 @@ class SearchWeather extends Component {
 
 	handleChange = event => {
 		this.setState({
-			city: event.target.value
+			name: event.target.value
 		});
 	};
 
@@ -27,7 +27,7 @@ class SearchWeather extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>City Name: </label>
-                    <input type="text" onChange={this.handleChange} value={this.state.city} />
+                    <input type="text" onChange={this.handleChange} value={this.state.name} />
                     <input type="submit" />
                 </form>
             </div>
@@ -35,8 +35,10 @@ class SearchWeather extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-	addCity: formData => dispatch({ type: 'ADD_CITY', payload: formData })
-});
+// const mapDispatchToProps = dispatch => ({
+// 	addCity: formData => dispatch({ type: 'ADD_CITY', payload: formData })
+// });
 
-export default connect(null, mapDispatchToProps)(SearchWeather);
+// export default connect(null, mapDispatchToProps)(SearchWeather);
+
+export default SearchWeather;
