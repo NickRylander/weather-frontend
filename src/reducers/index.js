@@ -1,4 +1,3 @@
-
 import { combineReducers } from 'redux'
 import cities from './citiesReducer'
 
