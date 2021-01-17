@@ -11,8 +11,8 @@ export const fetchWeather = name => {
         })
         .then(response => response.json())
         // .then(data => console.log(data))
-        .then(city => {
-            dispatch({type: "SET_CITY", payload: city})
+        .then(data => {
+            dispatch({type: "SET_CITY", payload: data})
         })
         .catch(err => {
             console.error(err);

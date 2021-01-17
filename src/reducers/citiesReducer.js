@@ -7,7 +7,8 @@ const rootReducer = combineReducers({
 function setCity(state = [], action) {
     switch(action.type) {
         case "SET_CITY":
-            return [...state, action.city]
+            // debugger
+            return [...state, action.payload]
         default:
             return state
     }

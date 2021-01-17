@@ -20,6 +20,7 @@ class NewCity extends Component {
     handleSubmit = event => {
 		event.preventDefault();
         this.props.fetchWeather(this.state.city);
+        debugger
         // this.props.history.push('/forecast');
 	};
 
@@ -27,6 +28,7 @@ class NewCity extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <h2>{this.state.city} Title</h2>
                     <label>City Name: </label>
                     <input type="text" name="city" onChange={this.handleChange} value={this.state.city} />
                     <input type="submit" />
@@ -36,4 +38,11 @@ class NewCity extends Component {
     }
 }
 
-export default connect(null, { fetchWeather })(NewCity);
+const mapStateToProps = state => {
+    debugger
+    return {
+      city: state.city
+    }
+  }
+
+export default connect(mapStateToProps, { fetchWeather })(NewCity);
