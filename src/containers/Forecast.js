@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import NewCity from './NewCity'
+import NewCity from './NewCity'
 import { connect } from 'react-redux'
 
 class Forecast extends Component {

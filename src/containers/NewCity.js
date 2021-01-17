@@ -20,7 +20,7 @@ class NewCity extends Component {
     handleSubmit = event => {
 		event.preventDefault();
         this.props.fetchWeather(this.state.city);
-        this.props.history.push('/forecast');
+        // this.props.history.push('/forecast');
 	};
 
     render() {
