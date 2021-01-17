@@ -7,24 +7,20 @@ class NewCity extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ''
+            city: ''
         }
     }
-
-    // componentDidMount(){
-    //     this.props.fetchWeather()
-    //   }
   
     handleChange = event => {
 		this.setState({
-			name: event.target.value
+			city: event.target.value
         });
-        // console.log(this.state)
     };
     
     handleSubmit = event => {
 		event.preventDefault();
-		this.props.fetchWeather(this.state.name);
+        this.props.fetchWeather(this.state.city);
+        this.props.history.push('/forecast');
 	};
 
     render() {
@@ -32,10 +28,9 @@ class NewCity extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>City Name: </label>
-                    <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
+                    <input type="text" name="city" onChange={this.handleChange} value={this.state.city} />
                     <input type="submit" />
                 </form>
-                {/* <p>{this.state.name}</p> */}
             </div>
         );
     }

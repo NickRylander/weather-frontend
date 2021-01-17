@@ -1,13 +1,13 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    cities: addCity
+    city: setCity
   });
 
-function addCity(state = [], action) {
+function setCity(state = [], action) {
     switch(action.type) {
         case "SET_CITY":
-            return [...state, action.name]
+            return [...state, action.city]
         default:
             return state
     }

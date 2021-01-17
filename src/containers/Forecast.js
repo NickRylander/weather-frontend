@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux'
+// import NewCity from './NewCity'
+import { connect } from 'react-redux'
 
 class Forecast extends Component {
   constructor(props){
     super(props)
+    debugger
   }
+  
   render() {
     return (
       <div>
-        {this.state}
+        <p>Forecast:</p>
       </div>
     );
   }
 }
 
-// export default connect()(Forecast);
-export default Forecast;
+export default connect()(Forecast);
+// export default Forecast;
