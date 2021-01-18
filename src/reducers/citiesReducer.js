@@ -1,8 +1,3 @@
-// import { combineReducers } from "redux";
-
-// const rootReducer = combineReducers({
-//     city: setCity
-//   });
 const defaultProps = {
     name: null,
     temp: null,
@@ -12,12 +7,11 @@ const defaultProps = {
     icon: null,
     main: null
 }
-// function setCity
+
 export default (state = defaultProps, action) => {
     
     switch(action.type) {
         case "SET_CITY":
-            // debugger
             return {
                 ...state,
                 name: action.payload.name,
@@ -32,5 +26,3 @@ export default (state = defaultProps, action) => {
             return state
     }
 }
-
-// export default setCity;

@@ -20,3 +20,22 @@ export const fetchWeather = name => {
         })
     }
 }
+
+export const addFavorite = name => {
+    return(dispatch) => {
+        return fetch('http://localhost:3000/cities', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({city:{
+                city_name: name
+            }})
+        })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        // .then(data => {
+        //     dispatch({ type: "ADD_FAVORITE", payload: data })
+        // })
+    }
+}

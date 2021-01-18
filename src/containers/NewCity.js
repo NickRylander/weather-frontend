@@ -39,11 +39,4 @@ class NewCity extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     debugger
-//     return {
-//       city: state.city
-//     }
-//   }
-
 export default connect(null, { fetchWeather })(withRouter(NewCity));

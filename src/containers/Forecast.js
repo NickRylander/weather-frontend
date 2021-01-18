@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { fetchWeather } from '../actions/fetchInfo';
+import { fetchWeather } from '../actions/fetchInfo'
+import { addFavorite } from '../actions/fetchInfo';
 import { connect } from 'react-redux'
 
 class Forecast extends Component {
+
 
   renderWeather() {
     if(this.props.city.name == null){
@@ -21,13 +23,16 @@ class Forecast extends Component {
         <p>{this.props.city.temp_min}</p>
         <p>{this.props.city.desc}</p>
         <p>{this.props.city.main}</p>
+        <input 
+        onClick={() => {this.props.addFavorite(this.props.city.name)}}
+        type="submit"
+        value="Save City"/>
       </div>
       )
     }
   }
 
   render() {
-    // debugger
     return (
       <>
       {this.renderWeather()}
@@ -37,10 +42,9 @@ class Forecast extends Component {
 }
 
 const mapStateToProps = state => {
-  // debugger
   return {
     city: state
   }
 }
 
-export default connect(mapStateToProps, {fetchWeather})(Forecast);
+export default connect(mapStateToProps, {fetchWeather, addFavorite})(Forecast);
