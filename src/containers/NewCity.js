@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 // import rootReducer from '../reducers/citiesReducer';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../actions/fetchInfo';
@@ -20,15 +21,15 @@ class NewCity extends Component {
     handleSubmit = event => {
 		event.preventDefault();
         this.props.fetchWeather(this.state.city);
-        debugger
-        // this.props.history.push('/forecast');
+        // debugger
+        this.props.history.push('/forecast');
 	};
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <h2>{this.state.city} Title</h2>
+                    {/* <h2>{this.state.city} Title</h2> */}
                     <label>City Name: </label>
                     <input type="text" name="city" onChange={this.handleChange} value={this.state.city} />
                     <input type="submit" />
@@ -38,11 +39,11 @@ class NewCity extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    debugger
-    return {
-      city: state.city
-    }
-  }
+// const mapStateToProps = state => {
+//     debugger
+//     return {
+//       city: state.city
+//     }
+//   }
 
-export default connect(mapStateToProps, { fetchWeather })(NewCity);
+export default connect(null, { fetchWeather })(withRouter(NewCity));

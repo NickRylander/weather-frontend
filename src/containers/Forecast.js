@@ -4,27 +4,29 @@ import { fetchWeather } from '../actions/fetchInfo';
 import { connect } from 'react-redux'
 
 class Forecast extends Component {
-  // constructor(props){
-  //   super(props)
-  //   debugger
-  // }
-  componentDidMount(){
-    this.props.fetchWeather('Seattle')
-  }
+
 
   render() {
+    // console.log(this.props.city)
     return (
       <div>
-        <p>Forecast:</p>
+        
+        <p>Forecast: </p>
+        <p>{this.props.city.temp}</p>
+        <p>{this.props.city.temp_max}</p>
+        <p>{this.props.city.temp_min}</p>
+        <p>{this.props.city.desc}</p>
+        <p>{this.props.city.icon}</p>
+        <p>{this.props.city.main}</p>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  debugger
+  // debugger
   return {
-    city: state
+    city: state.city
   }
 }
 
