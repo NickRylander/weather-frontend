@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import Favorites from './Favorites'
+// import Favorites from './Favorites'
 import NewCity from './NewCity'
-// import Forecast from './Forecast'
 
 export class Home extends Component {
 

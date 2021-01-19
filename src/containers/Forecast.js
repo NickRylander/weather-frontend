@@ -8,10 +8,8 @@ class Forecast extends Component {
 
   renderWeather() {
     if(this.props.city.name == null){
-      // debugger
       return "loading"
     }else{
-      // debugger
       const img = `http://openweathermap.org/img/wn/${this.props.city.icon}@2x.png`
       return(
         <div>
