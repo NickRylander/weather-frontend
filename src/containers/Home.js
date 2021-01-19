@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Favorites from './Favorites'
+import Favorites from './Favorites'
 import NewCity from './NewCity'
 
 export class Home extends Component {
@@ -10,7 +10,8 @@ export class Home extends Component {
         <h1>City Weather!</h1>
         <h3>Type your city below to get the weather!</h3>
         <NewCity />
-        {/* <Favorites /> */}
+        <h3>Your Favorite City!</h3>
+        <Favorites />
       </div>
     )
   }

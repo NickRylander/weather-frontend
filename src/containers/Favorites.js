@@ -29,7 +29,7 @@ class Favorites extends Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <>
                 {this.renderFavs()}
