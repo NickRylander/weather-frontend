@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Forecast from './Forecast'
 
 class Favorites extends Component {
 
@@ -33,6 +34,7 @@ class Favorites extends Component {
         return (
             <>
                 {this.renderFavs()}
+                <Forecast />
             </>
         );
     }

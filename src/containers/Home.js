@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Favorites from './Favorites'
 import NewCity from './NewCity'
+import { Link } from 'react-router-dom'
 
 export class Home extends Component {
 
@@ -11,7 +12,7 @@ export class Home extends Component {
         <h3>Type your city below to get the weather!</h3>
         <NewCity />
         <h3>Your Favorite City!</h3>
-        <Favorites />
+        <Link to='/favorites'><Favorites /></Link>
       </div>
     )
   }

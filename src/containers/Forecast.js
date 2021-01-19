@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { fetchWeather } from '../actions/fetchInfo'
 import { addFavorite } from '../actions/fetchInfo';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Forecast extends Component {
 
@@ -22,9 +24,13 @@ class Forecast extends Component {
         <p>{this.props.city.desc}</p>
         <p>{this.props.city.main}</p>
         <input 
-        onClick={() => {this.props.addFavorite(this.props.city.name)}}
+        onClick={
+          () => {this.props.addFavorite(this.props.city.name)
+          this.props.history.push('/favorites')}
+        }
         type="submit"
         value="Save City"/>
+        <Link to='/'>Home</Link> 
       </div>
       )
     }
@@ -45,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchWeather, addFavorite})(Forecast);
+export default connect(mapStateToProps, {fetchWeather, addFavorite})(withRouter(Forecast));
