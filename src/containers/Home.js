@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import Favorites from './Favorites'
 import NewCity from './NewCity'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getFavorite, fetchWeather } from '../actions/fetchInfo'
-// import { fetchWeather } from '../actions/fetchInfo';
 
 export class Home extends Component {
 
@@ -13,14 +11,10 @@ export class Home extends Component {
   }
 
   handleClick = () => {
-    // event.preventDefault();
-    // debugger
-        this.props.fetchWeather(this.props.city.name);
-        // this.props.history.push('/forecast');
+    this.props.fetchWeather(this.props.city.name);
   };
   
   render() {
-    // debugger
     return (
       <div>
         <h1>City Weather!</h1>
@@ -34,7 +28,6 @@ export class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     city: state
   }
