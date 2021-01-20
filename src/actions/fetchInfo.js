@@ -1,6 +1,7 @@
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
-export const fetchWeather = name => {
+export const fetchWeather = (name) => {
+    // debugger
     return(dispatch) => {
         return fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${name}`, {
 	        method: "GET",
@@ -12,6 +13,7 @@ export const fetchWeather = name => {
         .then(response => response.json())
         .then(data => {
             console.log(data)
+            // debugger
             dispatch({type: "SET_CITY", payload: data})
         })
         .catch(err => {
@@ -35,3 +37,13 @@ export const addFavorite = name => {
         .then(data => console.log(data))
     }
 }
+
+export const getFavorite = () => {
+    return(dispatch) => {
+        return fetch('http://localhost:3000/cities')
+          .then(resp => resp.json())
+          .then(data => {
+            dispatch({type: "SET_NAME", payload: [data[data.length-1]][0].city_name})
+          })
+      }
+    }

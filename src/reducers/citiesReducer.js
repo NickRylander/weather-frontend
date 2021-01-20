@@ -22,6 +22,11 @@ export default (state = defaultProps, action) => {
                 icon: action.payload.weather[0].icon,
                 main: action.payload.weather[0].main
             }
+        case "SET_NAME":
+            return {
+                ...state,
+                name: action.payload
+            }
         default:
             return state
     }

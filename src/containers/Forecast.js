@@ -26,7 +26,7 @@ class Forecast extends Component {
         <input 
         onClick={
           () => {this.props.addFavorite(this.props.city.name)
-          this.props.history.push('/favorites')}
+          this.props.history.push('/favorite')}
         }
         type="submit"
         value="Save City"/>
