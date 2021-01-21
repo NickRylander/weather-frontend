@@ -8,7 +8,8 @@ const Logo = () => {
                 width:"150px",
                 position: "relative",
                 borderRadius: "25px"}}
-                src="https://www.xda-developers.com/files/2019/09/Bowvie-Weather.jpg" />
+                src="https://www.xda-developers.com/files/2019/09/Bowvie-Weather.jpg"
+                alt="weather-logo"/>
         </div>
     )
 }
