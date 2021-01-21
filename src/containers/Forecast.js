@@ -4,12 +4,14 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import '../styling/App.css'
+import Headers from './Headers'
+import Loading from './Loading'
 
 class Forecast extends Component {
 
   renderWeather() {
     if(this.props.city.icon == null){
-      return "LOADING"
+      return <Loading />
     }else{
 
       const img = `http://openweathermap.org/img/wn/${this.props.city.icon}@2x.png`
@@ -23,13 +25,13 @@ class Forecast extends Component {
           <p>{this.props.city.main}</p>
 
           <h3><u>Temperature</u></h3>
-            <p>{Math.round((this.props.city.temp-273.15)* 9/5 + 32)}</p>
+            <p>{Math.round((this.props.city.temp-273.15)* 9/5 + 32)}℉</p>
 
           <h3><u>High</u></h3>
-            <p>{Math.round((this.props.city.temp_max-273.15)* 9/5 + 32)}</p>
+            <p>{Math.round((this.props.city.temp_max-273.15)* 9/5 + 32)}℉</p>
 
           <h3><u>Low</u></h3>
-            <p>{Math.round((this.props.city.temp_min-273.15)* 9/5 + 32)}</p>
+            <p>{Math.round((this.props.city.temp_min-273.15)* 9/5 + 32)}℉</p>
 
           <h3><u>Description</u></h3>
             <p>{this.props.city.desc}</p>
@@ -42,7 +44,6 @@ class Forecast extends Component {
           type="submit"
           value="Save City"/>
           <br/><br/>
-          <Link to='/'>Home</Link> 
         </div>
       )
     }
@@ -51,7 +52,7 @@ class Forecast extends Component {
   render() {
     return (
       <>
-      <h1 style={{textAlign: "center"}}>Forecast</h1>
+      <Headers text="Forecast"/> 
       {this.renderWeather()}
       </>
     );

@@ -9,3 +9,8 @@
 .favorite {
   text-align: center;
 }
+
+body, html {
+  background: black;
+  height: 100%;
+}
