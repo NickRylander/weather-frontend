@@ -3,6 +3,7 @@ import NewCity from './NewCity'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getFavorite, fetchWeather } from '../actions/fetchInfo'
+import '../styling/App.css'
 
 export class Home extends Component {
 
@@ -16,7 +17,7 @@ export class Home extends Component {
   
   render() {
     return (
-      <div>
+      <div className="home">
         <h1>City Weather!</h1>
         <h3>Type your city below to get the weather!</h3>
         <NewCity />
