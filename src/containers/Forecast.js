@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addFavorite, fetchWeather } from '../actions/fetchInfo'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import '../styling/App.css'
 import Headers from './Headers'
@@ -18,22 +18,22 @@ class Forecast extends Component {
 
       return(
         <div className="forecast">
-          <h2>{this.props.city.name}</h2>
+          <h3 style={{textShadow: "2px 2px #1565c0"}}>{this.props.city.name}</h3>
 
           <img src={img}></img>
 
-          <p>{this.props.city.main}</p>
+          {/* <p>{this.props.city.main}</p> */}
 
-          <h3><u>Temperature</u></h3>
+          <h4><u>Temperature</u></h4>
             <p>{Math.round((this.props.city.temp-273.15)* 9/5 + 32)}℉</p>
 
-          <h3><u>High</u></h3>
+          <h4><u>High</u></h4>
             <p>{Math.round((this.props.city.temp_max-273.15)* 9/5 + 32)}℉</p>
 
-          <h3><u>Low</u></h3>
+          <h4><u>Low</u></h4>
             <p>{Math.round((this.props.city.temp_min-273.15)* 9/5 + 32)}℉</p>
 
-          <h3><u>Description</u></h3>
+          <h4><u>Description</u></h4>
             <p>{this.props.city.desc}</p>
 
           <input 
@@ -42,6 +42,7 @@ class Forecast extends Component {
             this.props.history.push('/favorite')}
           }
           type="submit"
+          className="btn red lighten-1"
           value="Save City"/>
           <br/><br/>
         </div>

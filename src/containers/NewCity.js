@@ -27,9 +27,9 @@ class NewCity extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>City Name: </label>
+                    <h5>City Name:</h5>
                     <input type="text" name="city" onChange={this.handleChange} value={this.state.city} />
-                    <input type="submit" />
+                    <input className="btn red lighten-1" type="submit" />
                 </form>
             </div>
         );

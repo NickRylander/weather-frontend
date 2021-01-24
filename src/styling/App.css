@@ -13,4 +13,15 @@
 body, html {
   background: black;
   height: 100%;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+}
+
+input {
+  text-align: center;
+  color: white;
+}
+
+p {
+  font-size: larger;
 }

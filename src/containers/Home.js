@@ -19,10 +19,10 @@ export class Home extends Component {
     return (
       <div className="home">
         <h1>City Weather!</h1>
-        <h3>Type your city below to get the weather!</h3>
+        <h4>Type your city below to get the weather!</h4>
         <NewCity />
-        <h3>Your Favorite City!</h3>
-        <Link to='/favorite' onClick={this.handleClick}>{this.props.city.name}</Link>
+        <h4>Your Favorite City!</h4>
+        <Link to='/favorite' className="btn red lighten-1" onClick={this.handleClick}>{this.props.city.name}</Link>
       </div>
     )
   }
